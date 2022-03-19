@@ -22,7 +22,7 @@
             android:layout_width="216dp"
             android:layout_height="51dp"
             android:text="My Dashboard"
-            android:textColor="@color/Dark_blue"
+            android:textColor="@color/white"
             android:textSize="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.041" />
+
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/profile"
@@ -42,26 +43,26 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintCircleRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.841"
+            app:layout_constraintHorizontal_bias="0.882"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.021" />
-
+            app:layout_constraintVertical_bias="0.0" />
 
         <SearchView
             android:id="@+id/search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="382dp"
+            android:layout_height="51dp"
+            android:background="@color/white"
             android:iconifiedByDefault="false"
             android:imeOptions="actionGo"
             android:inputType="text"
             android:queryHint="search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.168"
+            app:layout_constraintHorizontal_bias="0.757"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.187" />
+            app:layout_constraintVertical_bias="0.19" />
 
         <TextView
             android:id="@+id/item1"
@@ -69,6 +70,7 @@
             android:layout_height="wrap_content"
             android:text="4 items"
             android:textSize="18dp"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.089"
@@ -85,7 +87,7 @@
             android:background="@color/login_form_details_light"
             app:tabGravity="center"
             android:paddingBottom="2sp"
-            app:tabTextColor=""
+            app:tabTextColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -111,28 +113,14 @@
                 android:text="Your properties" />
         </com.google.android.material.tabs.TabLayout>
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar2"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="413dp"
             android:layout_height="420dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
+            android:contextClickable="true"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -145,6 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:background="@color/login_form_details_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.913"
@@ -153,18 +142,60 @@
             app:layout_constraintVertical_bias="0.877"
             app:srcCompat="@android:drawable/ic_menu_add" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="59dp"
-            android:layout_height="52dp"
-            android:background="@color/login_form_details_light"
+        <RelativeLayout
+            android:layout_width="413dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:paddingLeft="8dp"
+            android:background="@color/login_form_details_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            app:layout_constraintVertical_bias="0.997">
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/login_form_details_light"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_home" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="69dp"
+                android:layout_height="50dp"
+                android:padding="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="120sp"
+                android:background="@color/login_form_details_light"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/login_form_details_light"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_chat" />
+
+            <ImageButton
+                android:id="@+id/imageButton10"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="350dp"
+               android:background="@color/login_form_details_light"
+                android:layout_marginRight="4dp"
+                android:padding="2dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_notify" />
+
+        </RelativeLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
