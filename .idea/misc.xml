@@ -15,9 +15,10 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/tenantfinder.xml" value="0.164" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22509057971014493" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19907333233461405" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1894221482525828" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.22509057971014493" />
-        <entry key="app/src/main/res/layout/home.xml" value="0.3270126342773438" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.22509057971014493" />
+        <entry key="app/src/main/res/layout/home.xml" value="0.18894195556640625" />
         <entry key="app/src/main/res/layout/profile.xml" value="1.2542089268781138" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.22509057971014493" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.164" />

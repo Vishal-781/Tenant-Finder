@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.214" />
 
     <EditText
-        android:id="@+id/editusername"
+        android:id="@+id/email"
         android:layout_width="337dp"
         android:layout_height="53dp"
         android:background="@color/login_form_details_light"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.545" />
 
     <Button
-        android:id="@+id/signupbutton"
+        android:id="@+id/button"
         android:layout_width="331dp"
         android:layout_height="52dp"
         android:background="@color/login_form_details_light"

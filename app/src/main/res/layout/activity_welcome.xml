@@ -15,23 +15,25 @@
         android:src="@mipmap/ic_launcher">
 
     </ImageView>
-        <TextView
-            android:id="@+id/welcome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Welcome!"
-            android:textSize="24dp"
-            android:textColor="@color/white"
-            android:layout_below="@+id/welcomeimage"
-            android:textAlignment="center"
-            android:padding="32dp"/>
-    <Button
+    <TextView
+        android:id="@+id/welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="Welcome!"
+        android:textSize="24dp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/welcomeimage"
+        android:textAlignment="center"
+        android:padding="32dp"/>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/login_form_details_medium"
         android:padding="2dp"
-        android:background="@color/login_form_details_medium"/>
+        android:text="Next" />
 
 
 

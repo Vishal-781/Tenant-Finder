@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TanantFinder">
         <activity
+            android:name=".welcome"
+            android:exported="false" />
+        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity
