@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "513775581528",
+    "project_id": "tanant-finder",
+    "storage_bucket": "tanant-finder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513775581528:android:742c2d8a209013a8c4cd2d",
+        "android_client_info": {
+          "package_name": "com.example.tanant_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513775581528-bgdlv24814a9ndadmft4fig7umad0j9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8m-qKJqCe-0lZmKHKmwAs2NtXfFBnwO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513775581528-bgdlv24814a9ndadmft4fig7umad0j9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
