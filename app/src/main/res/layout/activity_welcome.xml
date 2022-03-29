@@ -35,9 +35,16 @@
 
         android:text="Next" />
 
-
-
-
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        android:layout_below="@id/welcome"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="42dp"
+        android:background="@color/login_form_details_medium"/>
 
 
 </RelativeLayout>
