@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bglogin"
-    android:layout_margin="10dp">
+    android:background="@drawable/bglogin">
 
     <ImageView
         android:id="@+id/welcomeimage"
@@ -33,6 +32,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/login_form_details_medium"
         android:padding="2dp"
+
         android:text="Next" />
 
 

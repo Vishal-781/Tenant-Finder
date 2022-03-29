@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity  {
         no_account = findViewById(R.id.no_acccount);
        username = findViewById(R.id.username);
         password= findViewById(R.id.password);
+        button1= findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

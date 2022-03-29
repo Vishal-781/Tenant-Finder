@@ -8,8 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout1"
-        android:layout_width="415dp"
-        android:layout_height="735dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/homme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,8 +50,8 @@
 
         <SearchView
             android:id="@+id/search"
-            android:layout_width="382dp"
-            android:layout_height="51dp"
+            android:layout_width="379dp"
+            android:layout_height="36dp"
             android:background="@color/white"
             android:iconifiedByDefault="false"
             android:imeOptions="actionGo"
@@ -59,7 +59,7 @@
             android:queryHint="search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.757"
+            app:layout_constraintHorizontal_bias="0.484"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.19" />
@@ -68,7 +68,7 @@
             android:id="@+id/item1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 items"
+            android:text="items"
             android:textSize="18dp"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -78,40 +78,37 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.123" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="413dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
-            android:background="@color/login_form_details_light"
-            app:tabGravity="center"
-            android:paddingBottom="2sp"
-            app:tabTextColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.304"
-            app:tabContentStart="@dimen/material_emphasis_high_type">
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tabLayout"-->
+<!--            android:layout_width="413dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="1dp"-->
+<!--            android:layout_marginEnd="1dp"-->
+<!--            android:background="@color/login_form_details_light"-->
+<!--            app:tabGravity="center"-->
+<!--            android:paddingBottom="2sp"-->
+<!--            app:tabTextColor="@color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.304"-->
+<!--            app:tabContentStart="@dimen/material_emphasis_high_type">-->
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
 
-                android:text="properties available" />
+<!--                android:text="properties available" />-->
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your bookings" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your properties" />
-        </com.google.android.material.tabs.TabLayout>
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Your properties" />-->
+<!--        </com.google.android.material.tabs.TabLayout>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -119,17 +116,17 @@
             android:layout_height="420dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
-            android:contextClickable="true"
             android:background="@color/login_form_details_light"
+            android:contextClickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.822" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/addprop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -148,7 +145,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
             android:paddingLeft="8dp"
-            android:background="@color/login_form_details_medium"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -156,7 +153,7 @@
             app:layout_constraintVertical_bias="0.997">
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/homebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -166,13 +163,13 @@
                 app:srcCompat="@drawable/ic_home" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/profilebutton"
                 android:layout_width="69dp"
                 android:layout_height="50dp"
-                android:padding="8dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginLeft="120sp"
+                android:layout_marginTop="2dp"
                 android:background="@color/login_form_details_light"
+                android:padding="8dp"
                 app:srcCompat="@drawable/ic_profile" />
 
             <ImageButton
