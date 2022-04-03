@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TanantFinder">
         <activity
-            android:name=".logout"
+            android:name=".profile"
             android:exported="false" />
         <activity
             android:name=".property_details"

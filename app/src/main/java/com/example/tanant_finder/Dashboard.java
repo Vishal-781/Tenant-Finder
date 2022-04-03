@@ -26,6 +26,7 @@ public class Dashboard extends AppCompatActivity {
    DatabaseReference databaseReference;
    MyAdapter adapter;
    ImageButton profilebutton;
+   ImageButton homebutton;
 
 
     @Override
@@ -46,15 +47,23 @@ public class Dashboard extends AppCompatActivity {
         adapter=new MyAdapter(this,list);
         recyclerView.setAdapter(adapter);
         profilebutton=findViewById(R.id.profilebutton);
+        homebutton=findViewById(R.id.homebutton);
+//        homebutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(Dashboard.this,Dashboard.class));
+//            }
+//        });
+//
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Dashboard.this,welcome.class));
+                startActivity(new Intent(Dashboard.this,profile.class));
             }
         });
 
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
@@ -62,7 +71,6 @@ public class Dashboard extends AppCompatActivity {
                      list.add(User);
                 }
                 adapter.notifyDataSetChanged();
-
             }
 
             @Override

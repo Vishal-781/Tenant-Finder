@@ -18,19 +18,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.214" />
 
+
+    <EditText
+        android:layout_width="343dp"
+        android:layout_height="48dp"
+        android:background="@color/login_form_details_light"
+        android:hint="Username"
+        android:inputType="text"
+        android:textColorHint="@color/login_form_details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="337dp"
         android:layout_height="53dp"
         android:background="@color/login_form_details_light"
         android:hint="E-mail address"
-        android:textColorHint="@color/login_form_details"
         android:inputType="textEmailAddress"
+        android:textColorHint="@color/login_form_details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <EditText
         android:id="@+id/password1"
@@ -44,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.668" />
 
     <Button
         android:id="@+id/button"
@@ -57,7 +72,7 @@
         app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintVertical_bias="0.793" />
 
     <ProgressBar
         android:id="@+id/progressbar1"
@@ -77,14 +92,13 @@
         android:layout_height="wrap_content"
         android:background="@color/login_form_details_light"
         android:text="Already have account? Login"
-        android:textSize="18dp"
         android:textColor="@color/login_form_details"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.906" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

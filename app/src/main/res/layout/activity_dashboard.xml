@@ -19,11 +19,12 @@
 
         <TextView
             android:id="@+id/dashboard"
-            android:layout_width="216dp"
-            android:layout_height="51dp"
-            android:text="My Dashboard"
+            android:layout_width="317dp"
+            android:layout_height="46dp"
+            android:text="Properties available"
             android:textColor="@color/white"
             android:textSize="28dp"
+            android:gravity="center_horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.127"
@@ -32,53 +33,23 @@
             app:layout_constraintVertical_bias="0.041" />
 
 
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/profile"
-            android:layout_width="78dp"
-            android:layout_height="82dp"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="16dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintCircleRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.882"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+<!--        <androidx.constraintlayout.utils.widget.ImageFilterView-->
+<!--            android:id="@+id/profile"-->
+<!--            android:layout_width="78dp"-->
+<!--            android:layout_height="82dp"-->
+<!--            android:layout_marginStart="65dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:src="@drawable/dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintCircleRadius="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.882"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
 
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="379dp"
-            android:layout_height="36dp"
-            android:background="@color/white"
-            android:iconifiedByDefault="false"
-            android:imeOptions="actionGo"
-            android:inputType="text"
-            android:queryHint="search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.484"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.19" />
-
-        <TextView
-            android:id="@+id/item1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="items"
-            android:textSize="18dp"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.089"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.123" />
-
-<!--        <com.google.android.material.tabs.TabLayout-->
+        <!--        <com.google.android.material.tabs.TabLayout-->
 <!--            android:id="@+id/tabLayout"-->
 <!--            android:layout_width="413dp"-->
 <!--            android:layout_height="wrap_content"-->
@@ -110,10 +81,25 @@
 <!--                android:text="Your properties" />-->
 <!--        </com.google.android.material.tabs.TabLayout>-->
 
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="379dp"
+            android:layout_height="36dp"
+            android:background="@color/white"
+            android:iconifiedByDefault="false"
+            android:imeOptions="actionGo"
+            android:inputType="text"
+            android:queryHint="search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.148" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="420dp"
+            android:layout_width="408dp"
+            android:layout_height="513dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
             android:background="@color/login_form_details_light"
@@ -154,13 +140,13 @@
 
             <ImageButton
                 android:id="@+id/homebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="52dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="2dp"
                 android:background="@color/login_form_details_light"
                 android:padding="4dp"
-                app:srcCompat="@drawable/ic_home" />
+                app:srcCompat="@drawable/ic_baseline_home_24" />
 
             <ImageButton
                 android:id="@+id/profilebutton"
@@ -192,14 +178,18 @@
             <ImageButton
                 android:id="@+id/imageButton10"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="43dp"
                 android:layout_marginLeft="350dp"
                 android:layout_marginRight="8dp"
                 android:background="@color/login_form_details_light"
                 android:padding="2dp"
-                app:srcCompat="@drawable/ic_notify" />
+                app:srcCompat="@drawable/ic_baseline_notifications_24" />
+
 
         </RelativeLayout>
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

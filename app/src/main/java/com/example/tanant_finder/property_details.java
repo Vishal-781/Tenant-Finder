@@ -56,7 +56,7 @@ public class property_details extends AppCompatActivity {
         String phn_no =contact_no.getText().toString();
 
         user User=new user(dls,adrs,charge,phn_no);
-       DatabaseUsers.child("Property Details").setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
+       DatabaseUsers.child("Property Details").child(dls).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
            @Override
            public void onComplete(@NonNull Task<Void> task) {
                if (task.isSuccessful()){
