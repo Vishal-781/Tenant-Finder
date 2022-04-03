@@ -7,13 +7,13 @@ public class user {
 
     private String property_type;
     private String address;
-    private String rent;
-    private String contact_no;
+    private int rent;
+    private int contact_no;
 
-    public user() {
+    public user(String dls, String adrs, String charge, String phn_no) {
     }
 
-    public user(String property_type, String address, String rent, String contact_no) {
+    public user(String property_type, String address,int rent, int contact_no) {
         this.property_type = property_type;
         this.address = address;
         this.rent = rent;
@@ -27,11 +27,11 @@ public class user {
         return address;
     }
 
-    public String getRent() {
+    public int  getRent() {
         return rent;
     }
 
-    public String getContact_no() {
+    public int  getContact_no() {
         return contact_no;
     }
 }

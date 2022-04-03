@@ -16,6 +16,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<user> list;
 
+
+
+
     public MyAdapter(Context context, ArrayList<user> list) {
         this.context = context;
         this.list = list;
@@ -46,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     }
 
     public  static class  MyViewHolder extends RecyclerView.ViewHolder {
-           TextView details,address,rent,contact_no;
+         public  TextView details,address,rent,contact_no;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             details=itemView.findViewById(R.id.textdetails);
@@ -57,5 +60,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
 
         }
+
     }
 }

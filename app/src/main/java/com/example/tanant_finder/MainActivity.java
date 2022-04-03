@@ -11,11 +11,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -24,6 +31,8 @@ public class MainActivity extends AppCompatActivity  {
     private TextView no_account;
     private EditText username, password;
     private Button button1;
+    TextView fb;
+    CallbackManager callbackManager;
 
 
 
@@ -37,6 +46,35 @@ public class MainActivity extends AppCompatActivity  {
        username = findViewById(R.id.username);
         password= findViewById(R.id.password);
         button1= findViewById(R.id.button1);
+        fb=findViewById(R.id.fb);
+        callbackManager = CallbackManager.Factory.create();
+            callbackManager = CallbackManager.Factory.create();
+
+            LoginManager.getInstance().registerCallback(callbackManager,
+                    new FacebookCallback<LoginResult>() {
+                        @Override
+                        public void onSuccess(LoginResult loginResult) {
+                           startActivity(new Intent(MainActivity.this,welcome.class));
+                           finish();
+                        }
+
+                        @Override
+                        public void onCancel() {
+                            // App code
+                        }
+
+                        @Override
+                        public void onError( FacebookException exception) {
+                            // App code
+                        }
+                    });
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile"));
+
+            }
+        });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +91,11 @@ public class MainActivity extends AppCompatActivity  {
 
 
 }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
 
 
