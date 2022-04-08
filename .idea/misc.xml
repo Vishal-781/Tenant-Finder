@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/buttogbg.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/edittext_bg.xml" value="0.166" />
         <entry key="app/src/main/res/drawable/homme.xml" value="0.164" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_a_photo_24.xml" value="0.1695" />
         <entry key="app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.1695" />
         <entry key="app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1695" />
         <entry key="app/src/main/res/drawable/ic_eye.xml" value="0.164" />
@@ -16,6 +17,7 @@
         <entry key="app/src/main/res/drawable/ic_fllatter.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/tenantfinder.xml" value="0.164" />
+        <entry key="app/src/main/res/layout/activity_add_images.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22020624133123867" />
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1894221482525828" />

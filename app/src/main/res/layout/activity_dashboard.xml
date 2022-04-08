@@ -13,18 +13,19 @@
         android:background="@drawable/homme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/dashboard"
             android:layout_width="317dp"
             android:layout_height="46dp"
+            android:gravity="center_horizontal"
             android:text="Properties available"
             android:textColor="@color/white"
             android:textSize="28dp"
-            android:gravity="center_horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.127"
@@ -33,90 +34,90 @@
             app:layout_constraintVertical_bias="0.041" />
 
 
-<!--        <androidx.constraintlayout.utils.widget.ImageFilterView-->
-<!--            android:id="@+id/profile"-->
-<!--            android:layout_width="78dp"-->
-<!--            android:layout_height="82dp"-->
-<!--            android:layout_marginStart="65dp"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            android:src="@drawable/dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintCircleRadius="20dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.882"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.0" />-->
+        <!--        <androidx.constraintlayout.utils.widget.ImageFilterView-->
+        <!--            android:id="@+id/profile"-->
+        <!--            android:layout_width="78dp"-->
+        <!--            android:layout_height="82dp"-->
+        <!--            android:layout_marginStart="65dp"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:adjustViewBounds="true"-->
+        <!--            android:src="@drawable/dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintCircleRadius="20dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.882"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintVertical_bias="0.0" />-->
 
         <!--        <com.google.android.material.tabs.TabLayout-->
-<!--            android:id="@+id/tabLayout"-->
-<!--            android:layout_width="413dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="1dp"-->
-<!--            android:layout_marginEnd="1dp"-->
-<!--            android:background="@color/login_form_details_light"-->
-<!--            app:tabGravity="center"-->
-<!--            android:paddingBottom="2sp"-->
-<!--            app:tabTextColor="@color/white"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.304"-->
-<!--            app:tabContentStart="@dimen/material_emphasis_high_type">-->
+        <!--            android:id="@+id/tabLayout"-->
+        <!--            android:layout_width="413dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="1dp"-->
+        <!--            android:layout_marginEnd="1dp"-->
+        <!--            android:background="@color/login_form_details_light"-->
+        <!--            app:tabGravity="center"-->
+        <!--            android:paddingBottom="2sp"-->
+        <!--            app:tabTextColor="@color/white"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.0"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintVertical_bias="0.304"-->
+        <!--            app:tabContentStart="@dimen/material_emphasis_high_type">-->
 
-<!--            <com.google.android.material.tabs.TabItem-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
+        <!--            <com.google.android.material.tabs.TabItem-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
 
-<!--                android:text="properties available" />-->
+        <!--                android:text="properties available" />-->
 
 
-
-<!--            <com.google.android.material.tabs.TabItem-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Your properties" />-->
-<!--        </com.google.android.material.tabs.TabLayout>-->
+        <!--            <com.google.android.material.tabs.TabItem-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Your properties" />-->
+        <!--        </com.google.android.material.tabs.TabLayout>-->
 
         <SearchView
             android:id="@+id/search"
-            android:layout_width="379dp"
-            android:layout_height="36dp"
+            android:layout_width="297dp"
+            android:layout_height="35dp"
             android:background="@color/white"
             android:iconifiedByDefault="false"
             android:imeOptions="actionGo"
             android:inputType="text"
+            android:backgroundTint="@color/login_form_details_medium"
             android:queryHint="search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.412"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.148" />
+            app:layout_constraintVertical_bias="0.106" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="408dp"
-            android:layout_height="513dp"
+            android:layout_width="411dp"
+            android:layout_height="544dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
             android:background="@color/login_form_details_light"
             android:contextClickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.822" />
+            app:layout_constraintVertical_bias="0.654" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addprop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:background="@color/login_form_details_medium"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.913"
@@ -130,8 +131,8 @@
             android:layout_height="54dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
-            android:paddingLeft="8dp"
             android:background="@color/white"
+            android:paddingLeft="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -187,9 +188,6 @@
 
 
         </RelativeLayout>
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

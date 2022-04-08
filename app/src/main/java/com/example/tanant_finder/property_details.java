@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,7 +21,7 @@ public class property_details extends AppCompatActivity {
   Button submit,preview;
   EditText details,address,rent,contact_no;
   DatabaseReference DatabaseUsers;
-
+  ImageView imagesin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class property_details extends AppCompatActivity {
         address= findViewById(R.id.address);
         rent= findViewById(R.id.rent);
         contact_no= findViewById(R.id.contact_no);
+        imagesin=findViewById(R.id.imagesin);
         DatabaseUsers= FirebaseDatabase.getInstance().getReference();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

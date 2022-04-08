@@ -2,10 +2,12 @@ package com.example.tanant_finder;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -22,7 +24,7 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity {
    private FloatingActionButton addprop;
    RecyclerView recyclerView;
-   ArrayList<user> list;
+   ArrayList<user> list = new ArrayList<>();
    DatabaseReference databaseReference;
    MyAdapter adapter;
    ImageButton profilebutton;
@@ -42,10 +44,11 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         addprop = findViewById(R.id.addprop);
         recyclerView= findViewById(R.id.recyclerView);
-        databaseReference= FirebaseDatabase.getInstance().getReference("users");
+        databaseReference= FirebaseDatabase.getInstance().getReference("Property Details");
         list= new ArrayList<>();
         adapter=new MyAdapter(this,list);
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         profilebutton=findViewById(R.id.profilebutton);
         homebutton=findViewById(R.id.homebutton);
 //        homebutton.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +66,7 @@ public class Dashboard extends AppCompatActivity {
         });
 
 
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
@@ -78,6 +81,9 @@ public class Dashboard extends AppCompatActivity {
 
             }
         });
+
+        Log.i("printed",String.valueOf(list.size()));
+
         addprop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

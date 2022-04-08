@@ -94,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.362" />
 
         <View
             android:id="@+id/view"
@@ -112,71 +112,10 @@
             app:layout_constraintVertical_bias="0.724" />
 
 
-        <TextView
-            android:id="@+id/fb"
-            android:layout_width="254dp"
-            android:layout_height="37dp"
-            android:layout_marginTop="36dp"
-            android:drawableLeft="@drawable/ic_fb"
-            android:text="sign In with facebook"
-            android:textAlignment="center"
-            android:textColor="@color/login_form_details"
-            android:textSize="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.512"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/no_acccount"
-            app:layout_constraintVertical_bias="0.315" />
 
-        <View
-            android:id="@+id/view1"
-            android:layout_width="120dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="326dp"
-            android:layout_marginEnd="10dp"
-            android:background="@color/login_form_details"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.039" />
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="120dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="326dp"
-            android:layout_marginEnd="10dp"
-            android:background="@color/login_form_details"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.973"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.031" />
-
-        <TextView
-            android:id="@+id/or"
-            android:layout_width="74dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="21dp"
-            android:layout_marginBottom="23dp"
-            android:text="OR"
-            android:textAlignment="center"
-            android:textColor="@color/login_form_details_medium"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/fb"
-            app:layout_constraintEnd_toStartOf="@+id/view2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/view1"
-            app:layout_constraintTop_toBottomOf="@+id/no_acccount"
-            app:layout_constraintVertical_bias="1.0" />
+    w"
+            app:layout_constraintVertical_bias="0.346" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
