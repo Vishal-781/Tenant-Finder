@@ -18,21 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/dashboard"
-            android:layout_width="317dp"
-            android:layout_height="46dp"
-            android:gravity="center_horizontal"
-            android:text="Properties available"
-            android:textColor="@color/white"
-            android:textSize="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.127"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.041" />
-
 
         <!--        <androidx.constraintlayout.utils.widget.ImageFilterView-->
         <!--            android:id="@+id/profile"-->
@@ -81,36 +66,52 @@
         <!--                android:text="Your properties" />-->
         <!--        </com.google.android.material.tabs.TabLayout>-->
 
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="297dp"
-            android:layout_height="35dp"
-            android:background="@color/white"
-            android:iconifiedByDefault="false"
-            android:imeOptions="actionGo"
-            android:inputType="text"
-            android:backgroundTint="@color/login_form_details_medium"
-            android:queryHint="search"
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Properties available"
+            android:textColor="@color/white"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.412"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.106" />
+            app:layout_constraintVertical_bias="0.023" />
+
+<!--        <SearchView-->
+<!--            android:id="@+id/search"-->
+<!--            android:layout_width="297dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_marginTop="11dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:backgroundTint="@color/login_form_details_medium"-->
+<!--            android:iconifiedByDefault="false"-->
+<!--            android:imeOptions="actionGo"-->
+<!--            android:inputType="text"-->
+<!--            android:queryHint="search"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/dashboard"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="411dp"
-            android:layout_height="544dp"
+            android:layout_width="405dp"
+            android:layout_height="619dp"
             android:layout_marginStart="1dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="56dp"
             android:background="@color/login_form_details_light"
             android:contextClickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.654" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addprop"
@@ -125,6 +126,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.877"
             app:srcCompat="@android:drawable/ic_menu_add" />
+
 
         <RelativeLayout
             android:layout_width="413dp"
@@ -149,32 +151,16 @@
                 android:padding="4dp"
                 app:srcCompat="@drawable/ic_baseline_home_24" />
 
+
             <ImageButton
                 android:id="@+id/profilebutton"
                 android:layout_width="69dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="120sp"
+                android:layout_marginLeft="170sp"
                 android:layout_marginTop="2dp"
                 android:background="@color/login_form_details_light"
                 android:padding="8dp"
                 app:srcCompat="@drawable/ic_baseline_person_24" />
-
-            <ImageButton
-                android:id="@+id/btnchats"
-                android:layout_width="37dp"
-                android:layout_height="54dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="254dp"
-                android:layout_marginLeft="240dp"
-                android:layout_marginTop="-4dp"
-                android:layout_marginEnd="114dp"
-                android:layout_marginBottom="3dp"
-                android:background="@color/login_form_details_light"
-                android:padding="4dp"
-                app:srcCompat="@drawable/ic_baseline_message_24" />
 
             <ImageButton
                 android:id="@+id/imageButton10"

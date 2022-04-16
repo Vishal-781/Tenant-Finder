@@ -9,9 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.example.tanant_finder.adapter.MyAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,13 +21,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dashboard extends AppCompatActivity {
    private FloatingActionButton addprop;
    RecyclerView recyclerView;
    ArrayList<user> list = new ArrayList<>();
-   DatabaseReference databaseReference;
-   MyAdapter adapter;
+  private DatabaseReference databaseReference;
+  private     MyAdapter adapter;
    ImageButton profilebutton;
    ImageButton homebutton;
 
@@ -71,14 +73,16 @@ public class Dashboard extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                      user User=dataSnapshot.getValue(user.class);
+                     Upload_images upload_images=dataSnapshot.getValue(Upload_images.class);
                      list.add(User);
                 }
                 adapter.notifyDataSetChanged();
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(Dashboard.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
