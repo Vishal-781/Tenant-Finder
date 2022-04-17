@@ -61,7 +61,7 @@ public class profile extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(profile.this,signup.class));
+                startActivity(new Intent(profile.this,Edit_UserDetails.class));
             }
         });
         mAuth=FirebaseAuth.getInstance();
