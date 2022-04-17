@@ -21,6 +21,7 @@
         <entry key="app/src/main/res/drawable/tenantfinder.xml" value="0.164" />
         <entry key="app/src/main/res/layout/activity_add_images.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22020624133123867" />
+        <entry key="app/src/main/res/layout/activity_edit_user_details.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/activity_logout.xml" value="0.24818840579710144" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1894221482525828" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.22509057971014493" />

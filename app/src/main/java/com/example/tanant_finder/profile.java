@@ -34,6 +34,7 @@ import java.util.ArrayList;
 
 public class profile extends AppCompatActivity {
     Button btnlogout;
+    Button edit;
     ImageView profilepic;
     ImageButton previous;
     TextView textView1;
@@ -56,6 +57,13 @@ public class profile extends AppCompatActivity {
         textView1=findViewById(R.id.usernamed);
         textView2=findViewById(R.id.textView2);
         profilepic=findViewById(R.id.addprofilepic);
+        edit=findViewById(R.id.edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(profile.this,signup.class));
+            }
+        });
         mAuth=FirebaseAuth.getInstance();
         list=new ArrayList<>();
         mAdapter=new profileAdapter(this,list);
@@ -80,7 +88,7 @@ public class profile extends AppCompatActivity {
 
 
 
-        database.getReference().child("Users").child(mAuth.getUid()).child("profile dp")
+        database.getReference().child("Users").child(mAuth.getUid())
                   .addListenerForSingleValueEvent(new ValueEventListener() {
               @Override
               public void onDataChange(@NonNull DataSnapshot snapshot) {
