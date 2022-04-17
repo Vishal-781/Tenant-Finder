@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -94,7 +95,7 @@ public class profile extends AppCompatActivity {
               public void onDataChange(@NonNull DataSnapshot snapshot) {
                   if (snapshot.exists()){
                      user_details User_details= snapshot.getValue(user_details.class);
-                      Glide.with(profile.this).load(User_details.getProfile_dp()).circleCrop().placeholder(R.drawable.dp)
+                      Picasso.get().load(User_details.getProfile_dp()).placeholder(R.drawable.dp)
                               .into(profilepic);
                       textView1.setText(User_details.getUsernme() );
                       textView2.setText(User_details.getEmailc() );

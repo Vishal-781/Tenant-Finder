@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 public class Edit_UserDetails extends AppCompatActivity {
     EditText setusername, setemail, changepassword;
@@ -79,7 +80,7 @@ public class Edit_UserDetails extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if ( requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData() !=null){
           Uri  dpUri =data.getData();
-            Glide.with(this).load(dpUri).fitCenter().into(changeprofile);
+            Picasso.get().load(dpUri).placeholder(R.drawable.icon).into(changeprofile);
             final StorageReference reference=storage.getReference().child("profile_dp").child(mAuth.getUid());
             reference.putFile(dpUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
