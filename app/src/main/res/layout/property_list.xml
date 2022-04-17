@@ -121,12 +121,19 @@
                             android:textColor="@color/black"/>
                     </LinearLayout>
 
-        <Button
-            android:id="@+id/ViewButton"
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
-            android:text="view images" />
+            android:layout_gravity="center_vertical">
+            <ImageView
+                android:id="@+id/ImageV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

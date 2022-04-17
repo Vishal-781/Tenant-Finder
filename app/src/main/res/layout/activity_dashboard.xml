@@ -66,21 +66,7 @@
         <!--                android:text="Your properties" />-->
         <!--        </com.google.android.material.tabs.TabLayout>-->
 
-        <TextView
-            android:id="@+id/dashboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Properties available"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023" />
-
-<!--        <SearchView-->
+        <!--        <SearchView-->
 <!--            android:id="@+id/search"-->
 <!--            android:layout_width="297dp"-->
 <!--            android:layout_height="35dp"-->
@@ -97,21 +83,33 @@
 <!--            app:layout_constraintTop_toBottomOf="@+id/dashboard"-->
 <!--            app:layout_constraintVertical_bias="0.0" />-->
 
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Properties available"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="405dp"
-            android:layout_height="619dp"
+            android:layout_width="407dp"
+            android:layout_height="641dp"
             android:layout_marginStart="1dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="1dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="52dp"
             android:background="@color/login_form_details_light"
             android:contextClickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addprop"
@@ -127,53 +125,45 @@
             app:layout_constraintVertical_bias="0.877"
             app:srcCompat="@android:drawable/ic_menu_add" />
 
-
-        <RelativeLayout
-            android:layout_width="413dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="53dp"
             android:background="@color/white"
-            android:paddingLeft="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.997">
-
-            <ImageButton
-                android:id="@+id/homebutton"
-                android:layout_width="45dp"
-                android:layout_height="52dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="2dp"
-                android:background="@color/login_form_details_light"
-                android:padding="4dp"
-                app:srcCompat="@drawable/ic_baseline_home_24" />
-
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView">
 
             <ImageButton
                 android:id="@+id/profilebutton"
-                android:layout_width="69dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="170sp"
-                android:layout_marginTop="2dp"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
                 android:background="@color/login_form_details_light"
-                android:padding="8dp"
-                app:srcCompat="@drawable/ic_baseline_person_24" />
+                android:src="@drawable/ic_baseline_person_24" />
+            <ImageButton
+                android:id="@+id/homebutton"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:background="@color/login_form_details_light"
+                android:src="@drawable/ic_baseline_home_24" />
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp" />
 
             <ImageButton
-                android:id="@+id/imageButton10"
-                android:layout_width="wrap_content"
-                android:layout_height="43dp"
-                android:layout_marginLeft="350dp"
-                android:layout_marginRight="8dp"
+                android:id="@+id/notificationbutton"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="64dp"
                 android:background="@color/login_form_details_light"
-                android:padding="2dp"
-                app:srcCompat="@drawable/ic_baseline_notifications_24" />
+                android:src="@drawable/ic_baseline_notifications_24" />
 
 
-        </RelativeLayout>
+
+
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

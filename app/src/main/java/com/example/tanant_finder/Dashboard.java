@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.tanant_finder.adapter.MyAdapter;
@@ -19,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +33,7 @@ public class Dashboard extends AppCompatActivity {
   private DatabaseReference databaseReference;
   private     MyAdapter adapter;
    ImageButton profilebutton;
+
    ImageButton homebutton;
 
 
@@ -53,13 +57,13 @@ public class Dashboard extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         profilebutton=findViewById(R.id.profilebutton);
         homebutton=findViewById(R.id.homebutton);
-//        homebutton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(Dashboard.this,Dashboard.class));
-//            }
-//        });
-//
+        homebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this,Dashboard.class));
+            }
+        });
+
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,12 +72,14 @@ public class Dashboard extends AppCompatActivity {
         });
 
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Property Details").addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                      user User=dataSnapshot.getValue(user.class);
-                     Upload_images upload_images=dataSnapshot.getValue(Upload_images.class);
+                     User.setUserID(dataSnapshot.getKey());
+
                      list.add(User);
                 }
                 adapter.notifyDataSetChanged();

@@ -86,10 +86,10 @@
         android:textColorHint="@color/login_form_details_medium" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="388dp"
-        android:layout_height="108dp"
+        android:layout_width="397dp"
+        android:layout_height="102dp"
         android:layout_below="@id/contact_no"
-        android:layout_marginTop="13dp">
+        android:layout_marginTop="19dp">
 
         <Button
             android:id="@+id/submit"
@@ -115,7 +115,16 @@
             app:layout_constraintHorizontal_bias="0.815"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progessbar1"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:background="@color/login_form_details_medium" />
 
 
 </RelativeLayout>

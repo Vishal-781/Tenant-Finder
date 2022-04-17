@@ -25,17 +25,13 @@ public class user_details {
         return usernme;
     }
 
-    public void setUsernme(String usernme) {
-        this.usernme = usernme;
-    }
+
 
     public String getEmailc() {
         return emailc;
     }
 
-    public void setEmailc(String emailc) {
-        this.emailc = emailc;
-    }
+
 
     public String getPasswordc() {
         return passwordc;

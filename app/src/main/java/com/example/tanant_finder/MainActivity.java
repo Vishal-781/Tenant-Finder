@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity  {
     private TextView no_account;
     private EditText username, password;
     private Button button1;
-    TextView fb;
+
 
 
 

@@ -11,21 +11,32 @@ public class user {
     private String address = "";
     private String rent = "";
     private String contact_no = "";
-//    private Uri Uri1;
-//    private Uri Uri2;
-//    private Uri Uri3;
-//    private Uri Uri4;
+    private String imageV="";
+    String UserID;
+
+    public String getUserID() {
+        return UserID;
+    }
+
+    public void setUserID(String userID) {
+        UserID = userID;
+    }
+
+    public String getImageV() {
+        return imageV;
+    }
 
 
     public user() {
 
     }
 
-    public user(String property_type, String address, String rent, String contact_no) {
+    public user(String property_type, String address, String rent, String contact_no,String imageV) {
         this.property_type = property_type;
         this.address = address;
         this.rent = rent;
         this.contact_no = contact_no;
+        this.imageV=imageV;
 //        this.Uri1=Uri1;
 //        this.Uri2=Uri2;
 //        this.Uri3=Uri3;
