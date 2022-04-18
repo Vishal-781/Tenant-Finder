@@ -41,7 +41,8 @@ public class property_details extends AppCompatActivity {
   FirebaseAuth mAuth;
   ProgressBar progressBar1;
   String dls;
- Uri imageUri,imguri;
+ Uri imguri;
+ String imageUri;
  public ImageView imagesin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +84,7 @@ public class property_details extends AppCompatActivity {
     }
 
     private void insertData() {
-        dls= details.getText().toString();
+        dls= details.getText().toString() ;/* !=null ? details.getText().toString():mAuth.getUid().toString();*/
         String adrs=address.getText().toString();
         String charge=rent.getText().toString();
         String phn_no =contact_no.getText().toString();
@@ -94,7 +95,7 @@ public class property_details extends AppCompatActivity {
             @Override
             public void onSuccess(Uri uri) {
 
-                imageUri=uri !=null ? uri:null;
+                imageUri=uri !=null ? uri.toString():null;
             }
         });
 
@@ -102,7 +103,7 @@ public class property_details extends AppCompatActivity {
 
 
 
-        user User=new user(dls,adrs,charge,phn_no,imageUri.toString());
+        user User=new user(dls,adrs,charge,phn_no,imageUri);
        DatabaseUsers.child("Property Details").child(mAuth.getUid()).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
            @Override
            public void onComplete(@NonNull Task<Void> task) {

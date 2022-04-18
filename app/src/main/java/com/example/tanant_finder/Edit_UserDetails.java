@@ -42,6 +42,7 @@ public class Edit_UserDetails extends AppCompatActivity {
         setemail = findViewById(R.id.setemail);
         changepassword = findViewById(R.id.changepassword);
         savebtn = findViewById(R.id.savebtn);
+        storage=FirebaseStorage.getInstance();
         changeprofile=findViewById(R.id.changeprofilepic);
         changeprofile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +73,7 @@ public class Edit_UserDetails extends AppCompatActivity {
         Intent intent=new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,2);}
+        startActivityForResult(intent,1);}
 
 
     @Override

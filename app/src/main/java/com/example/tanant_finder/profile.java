@@ -60,6 +60,7 @@ public class profile extends AppCompatActivity {
         textView2=findViewById(R.id.textView2);
         profilepic=findViewById(R.id.addprofilepic);
         edit=findViewById(R.id.edit);
+        storage =FirebaseStorage.getInstance();
         mreference=FirebaseDatabase.getInstance().getReference("Property Details");
 
 
@@ -95,7 +96,7 @@ public class profile extends AppCompatActivity {
 
 
         database.getReference().child("Users").child(mAuth.getUid())
-                  .addListenerForSingleValueEvent(new ValueEventListener() {
+                  .addValueEventListener(new ValueEventListener() {
               @Override
               public void onDataChange(@NonNull DataSnapshot snapshot) {
                   if (snapshot.exists()){
