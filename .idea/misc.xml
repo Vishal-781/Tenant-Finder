@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.1695" />
         <entry key="app/src/main/res/drawable/ic_baseline_navigate_before_24.xml" value="0.1695" />
         <entry key="app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1695" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1695" />
         <entry key="app/src/main/res/drawable/ic_eye.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/ic_fb.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/ic_flatter.xml" value="0.166" />
@@ -34,6 +35,7 @@
         <entry key="app/src/main/res/layout/profile.xml" value="1.2542089268781138" />
         <entry key="app/src/main/res/layout/property_list.xml" value="0.23822463768115942" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.22509057971014493" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.164" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.164" />
       </map>

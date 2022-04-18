@@ -89,11 +89,12 @@ public class property_details extends AppCompatActivity {
         String phn_no =contact_no.getText().toString();
 
 
-       final     StorageReference reference=mStorage.getReference().child("property_images").child(dls);
+       final     StorageReference reference=mStorage.getReference().child("property_images").child(mAuth.getUid());
         reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                imageUri=uri;
+
+                imageUri=uri !=null ? uri:null;
             }
         });
 
@@ -102,7 +103,7 @@ public class property_details extends AppCompatActivity {
 
 
         user User=new user(dls,adrs,charge,phn_no,imageUri.toString());
-       DatabaseUsers.child("Property Details").child(mAuth.getUid()).child(dls).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
+       DatabaseUsers.child("Property Details").child(mAuth.getUid()).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
            @Override
            public void onComplete(@NonNull Task<Void> task) {
                if (task.isSuccessful()){
@@ -126,17 +127,11 @@ public class property_details extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imguri = data.getData();
-            StorageReference reference = mStorage.getReference().child("property_images").child(dls);
+            StorageReference reference = mStorage.getReference().child("property_images").child(mAuth.getUid());
             reference.putFile(imguri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(property_details.this, "image uploaded", Toast.LENGTH_SHORT).show();
-                }
-            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                    double progress = (100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
-                    progressBar1.setProgress((int) progress);
                 }
             });
 
@@ -144,7 +139,7 @@ public class property_details extends AppCompatActivity {
         }
 
 
-        DatabaseUsers.child("Property Details").child(mAuth.getUid()).child(dls).addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseUsers.child("Property Details").child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){

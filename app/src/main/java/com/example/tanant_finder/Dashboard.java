@@ -2,6 +2,7 @@ package com.example.tanant_finder;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +10,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -33,6 +36,7 @@ public class Dashboard extends AppCompatActivity {
   private DatabaseReference databaseReference;
   private     MyAdapter adapter;
    ImageButton profilebutton;
+   SearchView searchBar;
 
    ImageButton homebutton;
 
@@ -49,6 +53,7 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         addprop = findViewById(R.id.addprop);
+        searchBar=(SearchView)  findViewById(R.id.search_bar);
         recyclerView= findViewById(R.id.recyclerView);
         databaseReference= FirebaseDatabase.getInstance().getReference("Property Details");
         list= new ArrayList<>();
@@ -101,7 +106,22 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+      searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+          @Override
+          public boolean onQueryTextSubmit(String query) {
+              return false;
 
+          }
+
+          @Override
+          public boolean onQueryTextChange(String newText) {
+
+              return false;
+          }
+      });
 
     }
+
+
+
 }

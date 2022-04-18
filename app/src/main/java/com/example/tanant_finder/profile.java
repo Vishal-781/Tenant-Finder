@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -45,7 +46,7 @@ public class profile extends AppCompatActivity {
     ArrayList<user> list = new ArrayList<>();
    private profileAdapter mAdapter;
     RecyclerView recyclerView2;
- DatabaseReference reference;
+    private DatabaseReference mreference ;
     FirebaseDatabase database;
    private FirebaseStorage storage;
 
@@ -59,6 +60,9 @@ public class profile extends AppCompatActivity {
         textView2=findViewById(R.id.textView2);
         profilepic=findViewById(R.id.addprofilepic);
         edit=findViewById(R.id.edit);
+        mreference=FirebaseDatabase.getInstance().getReference("Property Details");
+
+
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +75,8 @@ public class profile extends AppCompatActivity {
         recyclerView2=findViewById(R.id.recyclerView2);
         database=FirebaseDatabase.getInstance();
         recyclerView2.setAdapter(mAdapter);
-        reference.child("Property Details").child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this));
+        mreference.child("Property Details").child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists())
@@ -143,7 +148,8 @@ public class profile extends AppCompatActivity {
         Intent intent=new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);}
+        startActivityForResult(intent,1);
+    }
 
 
     @Override
@@ -151,7 +157,7 @@ public class profile extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if ( requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData() !=null){
             dpUri =data.getData();
-            Glide.with(this).load(dpUri).fitCenter().into(profilepic);
+         Picasso.get().load(dpUri).into(profilepic);
             final StorageReference reference=storage.getReference().child("profile_dp").child(FirebaseAuth.getInstance().getUid());
             reference.putFile(dpUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
