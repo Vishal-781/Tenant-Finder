@@ -130,24 +130,24 @@ public class property_details extends AppCompatActivity {
 
 
 
-        DatabaseUsers.child("Property Details").child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    user User = snapshot.getValue(user.class);
-                    assert User !=null;
-                    Picasso.get()
-                            .load(User.getImageV())
-                            .placeholder(R.drawable.icon)
-                            .into(imagesin);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        DatabaseUsers.child("Property Details").child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()){
+//                    user User = snapshot.getValue(user.class);
+//                    assert User !=null;
+//                    Picasso.get()
+//                            .load(User.getImageV())
+//                            .placeholder(R.drawable.icon)
+//                            .into(imagesin);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
     }
     private void insertData() {
         dls= details.getText().toString()  !=null ? details.getText().toString():imageUri;
@@ -155,19 +155,7 @@ public class property_details extends AppCompatActivity {
         String charge=rent.getText().toString();
         String phn_no =contact_no.getText().toString();
 
-//        String imgnme=imagename.getText().toString();
 
-
-
-//     StorageReference reference=mStorage.getReference().child(id);
-//        reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//            @Override
-//            public void onSuccess(Uri uri) {
-//
-//                imageUri=uri !=null ? uri.toString():null;
-//
-//            }
-//        });
 
 
 

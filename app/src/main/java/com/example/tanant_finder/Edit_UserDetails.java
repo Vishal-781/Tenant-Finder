@@ -63,6 +63,7 @@ public class Edit_UserDetails extends AppCompatActivity {
         String email = setemail.getText().toString().trim();
         String pass = changepassword.getText().toString().trim();
         String usernme = setusername.getText().toString().trim();
+
         user_details User_details=new user_details(usernme,email,pass);
         Toast.makeText(Edit_UserDetails.this, "Changes saved", Toast.LENGTH_SHORT).show();
         String id=mAuth.getUid();
