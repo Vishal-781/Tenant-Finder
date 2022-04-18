@@ -69,7 +69,7 @@
         android:id="@+id/savebtn"
         android:layout_width="331dp"
         android:layout_height="52dp"
-        android:background="@color/login_form_details_light"
+        android:background="@color/login_form_details"
         android:text="save changes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

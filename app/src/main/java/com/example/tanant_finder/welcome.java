@@ -29,6 +29,7 @@ public class welcome extends AppCompatActivity {
         });
        logoutbtn.setOnClickListener(new View.OnClickListener() {
            @Override
+
            public void onClick(View view) {
                logout();
            }

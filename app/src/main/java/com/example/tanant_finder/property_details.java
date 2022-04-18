@@ -78,6 +78,9 @@ public class property_details extends AppCompatActivity {
         });
         preview.setOnClickListener(new View.OnClickListener() {
             @Override
+
+
+
             public void onClick(View view) {
                 startActivity(new Intent(property_details.this,Dashboard.class));
                 finish();
@@ -154,13 +157,6 @@ public class property_details extends AppCompatActivity {
         String adrs=address.getText().toString();
         String charge=rent.getText().toString();
         String phn_no =contact_no.getText().toString();
-
-
-
-
-
-
-
         user User=new user(dls,adrs,charge,phn_no,imguri.toString());
         DatabaseUsers.child("Property Details").child(adrs).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

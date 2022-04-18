@@ -10,7 +10,7 @@
         android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/homme"
+        android:background="@drawable/bglogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,27 +92,12 @@
             android:text="Properties available"
             android:textColor="@color/white"
             android:textSize="18dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.062"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029999971" />
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_bar"
-            android:layout_width="170dp"
-            android:layout_height="26dp"
-            android:layout_margin="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/login_form_details_light"
-            app:defaultQueryHint="search"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.85" />
+            app:layout_constraintVertical_bias="0.022" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

@@ -48,21 +48,27 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.412" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
-            android:layout_width="357dp"
-            android:layout_height="67dp"
-            android:background="@drawable/edittext_bg"
-            android:drawableRight="@drawable/ic_eye"
-            android:hint="password"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:textColorHint="@color/login_form_details_medium"
+            android:layout_width="377dp"
+            android:layout_height="64dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Enter your password"
+            app:passwordToggleEnabled="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.556" />
+            app:layout_constraintVertical_bias="0.556">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="364dp"
+                android:layout_height="match_parent"
+                android:background="@color/login_form_details_light"
+                android:inputType="textPassword"
+
+                android:ems="15"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/button1"
