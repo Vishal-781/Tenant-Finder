@@ -36,7 +36,7 @@ public class Dashboard extends AppCompatActivity {
   private DatabaseReference databaseReference;
   private     MyAdapter adapter;
    ImageButton profilebutton;
-   SearchView searchBar;
+
 
 
 
@@ -53,7 +53,7 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         addprop = findViewById(R.id.addprop);
-        searchBar=(SearchView)  findViewById(R.id.search_bar);
+
         recyclerView= findViewById(R.id.recyclerView);
         databaseReference= FirebaseDatabase.getInstance().getReference("Property Details");
         list= new ArrayList<>();
@@ -96,19 +96,6 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-      searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-          @Override
-          public boolean onQueryTextSubmit(String query) {
-              return false;
-
-          }
-
-          @Override
-          public boolean onQueryTextChange(String newText) {
-
-              return false;
-          }
-      });
 
     }
 
