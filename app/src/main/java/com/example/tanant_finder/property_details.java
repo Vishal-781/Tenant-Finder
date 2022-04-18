@@ -162,7 +162,7 @@ public class property_details extends AppCompatActivity {
 
 
         user User=new user(dls,adrs,charge,phn_no,imguri.toString());
-        DatabaseUsers.child("Property Details").child(mAuth.getUid()).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
+        DatabaseUsers.child("Property Details").child(adrs).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
