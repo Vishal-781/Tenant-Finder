@@ -37,6 +37,7 @@ import java.util.ArrayList;
 public class profile extends AppCompatActivity {
     Button btnlogout;
     Button edit;
+
     ImageView profilepic;
     ImageButton previous;
     TextView textView1;
@@ -77,15 +78,18 @@ public class profile extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
         recyclerView2.setAdapter(mAdapter);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
-        mreference.child("Property Details").child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        mreference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists())
-                {
-                    user User =snapshot.getValue(user.class);
+                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    user User=dataSnapshot.getValue(user.class);
+
                     list.add(User);
                 }
+                mAdapter.notifyDataSetChanged();
+
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

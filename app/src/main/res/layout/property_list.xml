@@ -37,31 +37,31 @@
                 android:textSize="16dp" />
         </LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/address1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal">
+                android:text="Address:"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/address1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Address:"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textaddress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="56dp"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/textaddress"
+                android:layout_width="15dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="0dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+        </LinearLayout>
 
 
         <LinearLayout

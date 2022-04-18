@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -84,53 +86,50 @@ public class property_details extends AppCompatActivity {
 
     }
 
-    private void insertData() {
-        dls= details.getText().toString()  !=null ? details.getText().toString():imageUri;
-        String adrs=address.getText().toString();
-        String charge=rent.getText().toString();
-        String phn_no =contact_no.getText().toString();
-        String imgnme=imagename.getText().toString();
-        if (imgnme !=null){
-            id=imgnme;
-
-        }
-        else
-        {
-            id=mAuth.getUid();
-        }
-
-
-     StorageReference reference=mStorage.getReference().child("property_images").child(id);
-        reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-
-                imageUri=uri !=null ? uri.toString():null;
-            }
-        });
-
-
-
-
-
-        user User=new user(dls,adrs,charge,phn_no,imageUri);
-       DatabaseUsers.child("Property Details").child(mAuth.getUid()).child(dls).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
-           @Override
-           public void onComplete(@NonNull Task<Void> task) {
-               if (task.isSuccessful()){
-                   Toast.makeText(property_details.this, "Propety Added", Toast.LENGTH_SHORT).show();
-               }
-           }
-       });
-
-    }
+//    private void insertData() {
+//        dls= details.getText().toString()  !=null ? details.getText().toString():imageUri;
+//        String adrs=address.getText().toString();
+//        String charge=rent.getText().toString();
+//        String phn_no =contact_no.getText().toString();
+//        String imgnme=imagename.getText().toString();
+//
+//
+////
+////     StorageReference reference=mStorage.getReference().child();
+////        reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+////            @Override
+////            public void onSuccess(Uri uri) {
+////
+////                imageUri=uri !=null ? uri.toString():null;
+////            }
+////        });
+//
+//
+//
+//
+//
+//        user User=new user(dls,adrs,charge,phn_no,imageUri);
+//       DatabaseUsers.child("Property Details").child(dls).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
+//           @Override
+//           public void onComplete(@NonNull Task<Void> task) {
+//               if (task.isSuccessful()){
+//                   Toast.makeText(property_details.this, "Propety Added", Toast.LENGTH_SHORT).show();
+//               }
+//           }
+//       });
+//
+//    }
     public void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
-
+   private String  getFileExtension(Uri uri){
+       ContentResolver cR=getContentResolver();
+       MimeTypeMap  mime=MimeTypeMap.getSingleton();
+       return mime.getExtensionFromMimeType(cR.getType(uri));
+   }
     //
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -138,7 +137,7 @@ public class property_details extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imguri = data.getData();
-            StorageReference reference = mStorage.getReference().child("property_images").child(id);
+            StorageReference reference = mStorage.getReference().child(System.currentTimeMillis()+"."+getFileExtension(imguri));
             reference.putFile(imguri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -148,7 +147,8 @@ public class property_details extends AppCompatActivity {
             reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
-                    database.getReference().child("Property Details").child(mAuth.getUid()).child(dls).child("Image").setValue(uri.toString());
+                    imageUri=uri !=null ? uri.toString():null;
+                    database.getReference().child("Property Details").child(dls).setValue(uri.toString());
                 }
             });
 
@@ -156,7 +156,8 @@ public class property_details extends AppCompatActivity {
         }
 
 
-        DatabaseUsers.child("Property Details").child(mAuth.getUid()).child(dls).addValueEventListener(new ValueEventListener() {
+
+        DatabaseUsers.child("Property Details").child(dls).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -175,6 +176,43 @@ public class property_details extends AppCompatActivity {
             }
         });
     }
+    private void insertData() {
+        dls= details.getText().toString()  !=null ? details.getText().toString():imageUri;
+        String adrs=address.getText().toString();
+        String charge=rent.getText().toString();
+        String phn_no =contact_no.getText().toString();
+        String imgnme=imagename.getText().toString();
+
+
+//
+//     StorageReference reference=mStorage.getReference().child();
+//        reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//            @Override
+//            public void onSuccess(Uri uri) {
+//
+//                imageUri=uri !=null ? uri.toString():null;
+//            }
+//        });
+
+
+
+
+
+        user User=new user(dls,adrs,charge,phn_no,imageUri);
+        DatabaseUsers.child("Property Details").child(dls).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(property_details.this, "Propety Added", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+
+
+
 }
 
 

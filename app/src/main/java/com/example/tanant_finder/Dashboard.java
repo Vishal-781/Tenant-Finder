@@ -38,7 +38,7 @@ public class Dashboard extends AppCompatActivity {
    ImageButton profilebutton;
    SearchView searchBar;
 
-   ImageButton homebutton;
+
 
 
     @Override
@@ -58,16 +58,9 @@ public class Dashboard extends AppCompatActivity {
         databaseReference= FirebaseDatabase.getInstance().getReference("Property Details");
         list= new ArrayList<>();
         adapter=new MyAdapter(this,list);
-        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
         profilebutton=findViewById(R.id.profilebutton);
-        homebutton=findViewById(R.id.homebutton);
-        homebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Dashboard.this,Dashboard.class));
-            }
-        });
 
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,13 +70,11 @@ public class Dashboard extends AppCompatActivity {
         });
 
 
-        databaseReference.child("Property Details").addValueEventListener(new ValueEventListener() {
-            @SuppressLint("NotifyDataSetChanged")
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                     user User=dataSnapshot.getValue(user.class);
-
+                    user User=dataSnapshot.getValue(user.class);
                      list.add(User);
                 }
                 adapter.notifyDataSetChanged();
