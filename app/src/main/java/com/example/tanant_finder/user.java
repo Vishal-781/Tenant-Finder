@@ -12,19 +12,10 @@ public class user {
     private String rent = "";
     private String contact_no = "";
     private String imageV="https://www.google.com/url?sa=i&url=https%3A%2F%2Fphotos.com%2F&psig=AOvVaw3Kmky3mCMwOLr5Vacs0kH5&ust=1650361428466000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNDy3cqpnfcCFQAAAAAdAAAAABAD";
-    String UserID;
 
-    public String getUserID() {
-        return UserID;
-    }
 
-    public void setUserID(String userID) {
-        UserID = userID;
-    }
 
-    public String getImageV() {
-        return imageV;
-    }
+
 
 
     public user() {
@@ -37,10 +28,8 @@ public class user {
         this.rent = rent;
         this.contact_no = contact_no;
         this.imageV=imageV;
-//        this.Uri1=Uri1;
-//        this.Uri2=Uri2;
-//        this.Uri3=Uri3;
-//        this.Uri4=Uri4;
+
+
     }
 
     public String getProperty_type() {
@@ -58,7 +47,8 @@ public class user {
     public String getContact_no() {
         return contact_no;
     }
+    public String getImageV() {
+        return imageV;
+    }
 
-//    public Uri getUri1() {
-//
 }

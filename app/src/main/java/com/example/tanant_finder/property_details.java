@@ -34,13 +34,13 @@ import com.squareup.picasso.Picasso;
 public class property_details extends AppCompatActivity {
   Button submit,preview;
   final int PICK_IMAGE_REQUEST=11;
-  EditText details,address,rent,contact_no;
+  EditText details,address,rent,contact_no,imagename;
   DatabaseReference DatabaseUsers;
   FirebaseStorage mStorage;
   FirebaseDatabase database;
   FirebaseAuth mAuth;
   ProgressBar progressBar1;
-  String dls;
+  String dls,id;
  Uri imguri;
  String imageUri;
  public ImageView imagesin;
@@ -54,6 +54,7 @@ public class property_details extends AppCompatActivity {
         address= findViewById(R.id.address);
         rent= findViewById(R.id.rent);
         contact_no= findViewById(R.id.contact_no);
+        imagename=findViewById(R.id.image_name);
         progressBar1=findViewById(R.id.progressbar1);
         mAuth=FirebaseAuth.getInstance();
         mStorage=FirebaseStorage.getInstance();
@@ -84,13 +85,22 @@ public class property_details extends AppCompatActivity {
     }
 
     private void insertData() {
-        dls= details.getText().toString() ;/* !=null ? details.getText().toString():mAuth.getUid().toString();*/
+        dls= details.getText().toString()  !=null ? details.getText().toString():imageUri;
         String adrs=address.getText().toString();
         String charge=rent.getText().toString();
         String phn_no =contact_no.getText().toString();
+        String imgnme=imagename.getText().toString();
+        if (imgnme !=null){
+            id=imgnme;
+
+        }
+        else
+        {
+            id=mAuth.getUid();
+        }
 
 
-       final     StorageReference reference=mStorage.getReference().child("property_images").child(mAuth.getUid());
+     StorageReference reference=mStorage.getReference().child("property_images").child(id);
         reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -104,7 +114,7 @@ public class property_details extends AppCompatActivity {
 
 
         user User=new user(dls,adrs,charge,phn_no,imageUri);
-       DatabaseUsers.child("Property Details").child(mAuth.getUid()).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
+       DatabaseUsers.child("Property Details").child(mAuth.getUid()).child(dls).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
            @Override
            public void onComplete(@NonNull Task<Void> task) {
                if (task.isSuccessful()){
@@ -128,11 +138,17 @@ public class property_details extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imguri = data.getData();
-            StorageReference reference = mStorage.getReference().child("property_images").child(mAuth.getUid());
+            StorageReference reference = mStorage.getReference().child("property_images").child(id);
             reference.putFile(imguri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(property_details.this, "image uploaded", Toast.LENGTH_SHORT).show();
+                }
+            });
+            reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    database.getReference().child("Property Details").child(mAuth.getUid()).child(dls).child("Image").setValue(uri.toString());
                 }
             });
 
@@ -140,7 +156,7 @@ public class property_details extends AppCompatActivity {
         }
 
 
-        DatabaseUsers.child("Property Details").child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseUsers.child("Property Details").child(mAuth.getUid()).child(dls).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){

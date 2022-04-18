@@ -83,7 +83,6 @@ public class Dashboard extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                      user User=dataSnapshot.getValue(user.class);
-                     User.setUserID(dataSnapshot.getKey());
 
                      list.add(User);
                 }
